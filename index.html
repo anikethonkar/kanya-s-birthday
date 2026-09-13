@@ -101,7 +101,7 @@
   #cover .eyebrow{font-weight:700; letter-spacing:.14em; color:var(--gold-soft); font-size:.8rem; text-transform:uppercase; margin-bottom:30px;}
 
   .locket{
-    position:relative; width:260px; height:230px; margin:0 auto;
+    position:relative; width:260px; height:230px; margin:0 auto 10px;
     perspective:1400px;
   }
   .locket-half{
@@ -130,15 +130,15 @@
   .locket-content{
     position:absolute; inset:0; display:flex; flex-direction:column;
     align-items:center; justify-content:center; text-align:center; z-index:1;
-    opacity:0; transition:opacity .8s ease .55s;
+    opacity:0; transition:opacity .8s ease .55s; padding:0 40px;
   }
   .locket.open .locket-content{opacity:1;}
   .locket-content .monogram{
     font-family:var(--font-display); font-style:italic; font-weight:600;
-    font-size:1.5rem; color:var(--cream);
+    font-size:1.15rem; line-height:1.3; color:var(--cream);
   }
   .locket-content .datestamp{
-    font-size:.75rem; letter-spacing:.25em; color:var(--gold-soft); margin-top:8px;
+    font-size:.75rem; letter-spacing:.25em; color:var(--gold-soft); margin-top:10px;
   }
 
   #cover .prompt{
@@ -157,7 +157,7 @@
   .enter-btn:hover{background:var(--gold-soft); color:var(--bg-deep);}
   .enter-btn:focus-visible{outline:2px solid var(--cream); outline-offset:3px;}
   .tap-hint{
-    font-size:.85rem; color:#8f7360; margin-top:22px; font-family:var(--font-body);
+    font-size:.85rem; color:#8f7360; margin-top:44px; font-family:var(--font-body);
   }
   .locket.open ~ .tap-hint{display:none;}
 
@@ -211,13 +211,18 @@
   .pin-body{display:none; margin-top:12px;}
   .pin-card.opened .pin-body{display:block;}
   .pin-card.opened .pin-hint{display:none;}
-  .pin-body p{font-family:var(--font-hand); font-size:1.05rem; line-height:1.5; color:#3A1F1A; margin-bottom:10px;}
-  .pin-photo{
-    aspect-ratio:4/3; border-radius:4px; margin-top:8px;
+  .pin-card.opened .pin-title{display:none;}
+  .pin-content{
+    border:1.5px dashed #C9A87F; border-radius:8px; padding:14px;
+    background:rgba(212,167,61,.06);
+  }
+  .pin-content p{font-family:var(--font-hand); font-size:1.05rem; line-height:1.5; color:#3A1F1A; margin-bottom:10px; background:none; border-left:none; padding:0;}
+  .pin-content .pin-photo{
+    aspect-ratio:4/3; border-radius:4px; margin-top:0;
     background:
       linear-gradient(135deg, rgba(201,81,90,.15), rgba(212,167,61,.15)),
       repeating-linear-gradient(45deg, #E7DCC0, #E7DCC0 8px, #EFE5CC 8px, #EFE5CC 16px);
-    border:1.5px dashed #C9A87F;
+    border:none;
     display:flex; align-items:center; justify-content:center; text-align:center; padding:10px;
     font-size:.75rem; font-weight:700; color:#8A6B4F; background-size:cover; background-position:center;
   }
@@ -330,7 +335,7 @@
     </div>
     <div class="locket-clasp">♥</div>
     <div class="locket-content">
-      <div class="monogram">Kanna &amp; Kanya</div>
+      <div class="monogram">Happy Birthday<br>Kanya</div>
       <div class="datestamp">26 . 09</div>
     </div>
   </div>
@@ -343,7 +348,7 @@
 <!-- ================= HAPPY BIRTHDAY ================= -->
 <section id="hbday-section">
   <div class="hbday-sparkle">✨ 🎂 ✨</div>
-  <h1 class="hbday-title">Happy Birthday<br><span class="accent">Kanya</span></h1>
+  <h1 class="hbday-title">Happy Birthday<br><span class="accent">Ananyaa</span></h1>
   <p class="hbday-sub"><!-- EDIT ME (optional) -->Every single year, this day gets a little bigger to me.</p>
 </section>
 
@@ -360,9 +365,11 @@
         <div class="pin-title">the moment it started</div>
         <div class="pin-hint">TAP TO READ</div>
         <div class="pin-body">
-          <!-- EDIT ME -->
-          <p class="edit-me">[Write about the moment it started, in a few lines. Corkboard notes read better short.]</p>
-          <div class="pin-photo" style="background-image:url('')"><span>photos/1.jpg</span></div>
+          <div class="pin-content">
+            <!-- EDIT ME -->
+            <p class="edit-me">[Write about the moment it started, in a few lines. Corkboard notes read better short.]</p>
+            <div class="pin-photo" style="background-image:url('')"><span>photos/1.jpg</span></div>
+          </div>
         </div>
       </div>
 
@@ -370,9 +377,11 @@
         <div class="pin-title">something small you probably don't know I noticed</div>
         <div class="pin-hint">TAP TO READ</div>
         <div class="pin-body">
-          <!-- EDIT ME -->
-          <p class="edit-me">[A small, specific detail — a habit, a phrase, something only you'd have noticed.]</p>
-          <div class="pin-photo" style="background-image:url('')"><span>photos/2.jpg</span></div>
+          <div class="pin-content">
+            <!-- EDIT ME -->
+            <p class="edit-me">[A small, specific detail — a habit, a phrase, something only you'd have noticed.]</p>
+            <div class="pin-photo" style="background-image:url('')"><span>photos/2.jpg</span></div>
+          </div>
         </div>
       </div>
 
@@ -380,9 +389,11 @@
         <div class="pin-title">a memory I go back to</div>
         <div class="pin-hint">TAP TO READ</div>
         <div class="pin-body">
-          <!-- EDIT ME -->
-          <p class="edit-me">[The memory you actually replay. Be specific.]</p>
-          <div class="pin-photo" style="background-image:url('')"><span>photos/3.jpg</span></div>
+          <div class="pin-content">
+            <!-- EDIT ME -->
+            <p class="edit-me">[The memory you actually replay. Be specific.]</p>
+            <div class="pin-photo" style="background-image:url('')"><span>photos/3.jpg</span></div>
+          </div>
         </div>
       </div>
 
@@ -390,9 +401,11 @@
         <div class="pin-title">something I wish I'd said, at the time</div>
         <div class="pin-hint">TAP TO READ</div>
         <div class="pin-body">
-          <!-- EDIT ME -->
-          <p class="edit-me">[Something left unsaid. This one can be short.]</p>
-          <div class="pin-photo" style="background-image:url('')"><span>photos/4.jpg</span></div>
+          <div class="pin-content">
+            <!-- EDIT ME -->
+            <p class="edit-me">[Something left unsaid. This one can be short.]</p>
+            <div class="pin-photo" style="background-image:url('')"><span>photos/4.jpg</span></div>
+          </div>
         </div>
       </div>
 
@@ -400,9 +413,11 @@
         <div class="pin-title">who you are, in one memory</div>
         <div class="pin-hint">TAP TO READ</div>
         <div class="pin-body">
-          <!-- EDIT ME -->
-          <p class="edit-me">[One memory that sums up who she is to you.]</p>
-          <div class="pin-photo" style="background-image:url('')"><span>photos/5.jpg</span></div>
+          <div class="pin-content">
+            <!-- EDIT ME -->
+            <p class="edit-me">[One memory that sums up who she is to you.]</p>
+            <div class="pin-photo" style="background-image:url('')"><span>photos/5.jpg</span></div>
+          </div>
         </div>
       </div>
 
