@@ -256,6 +256,22 @@
   .heart-back{background:var(--paper); color:var(--ink); transform:rotateY(180deg); font-family:var(--font-hand); font-size:1.02rem; line-height:1.4;}
   .heart-card:focus-visible .heart-inner{outline:2px solid var(--rose); outline-offset:4px;}
 
+  /* ---------- Full-bleed photo declaration ---------- */
+  #declare-section{
+    padding:0; justify-content:center; align-items:center;
+    background-size:cover; background-position:center;
+  }
+  #declare-section .declare-overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(24,10,12,.35) 0%, rgba(24,10,12,.15) 40%, rgba(24,10,12,.75) 100%);
+  }
+  #declare-section .declare-text{
+    position:relative; z-index:2; text-align:center; padding:0 30px;
+    font-family:var(--font-display); font-style:italic; font-weight:600;
+    font-size:clamp(1.8rem, 7vw, 3.2rem); line-height:1.25; color:var(--cream);
+    text-shadow:0 4px 24px rgba(0,0,0,.6);
+  }
+
   /* ---------- Letter (paginated) ---------- */
   #letter-wrap{max-width:680px; width:100%;}
   .letter-page{
@@ -510,6 +526,12 @@
   </div>
 </section>
 
+<!-- ================= FULL PHOTO DECLARATION (LAST PAGE) ================= -->
+<section id="declare-section" style="background-image:url('photos/12.jpg')">
+  <div class="declare-overlay"></div>
+  <div class="declare-text">Happy Birthday Ananyaa,<br>I love you</div>
+</section>
+
 <nav class="page-nav" id="page-nav">
   <button id="page-prev" aria-label="Previous">← Back</button>
   <span class="page-count" id="page-count"></span>
@@ -534,7 +556,7 @@ document.getElementById('enter-btn').addEventListener('click', () => {
 });
 
 /* ---------------- Pagination ---------------- */
-const pageIds = ['cover','hbday-section','corkboard-section','photowall-section','reasons-section','letter-section'];
+const pageIds = ['cover','hbday-section','corkboard-section','photowall-section','reasons-section','letter-section','declare-section'];
 let pageIndex = 0;
 let hbdayFired = false;
 
